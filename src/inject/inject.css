@@ -1,0 +1,15 @@
+/**
+ * Place your custom CSS styles here.
+ **/
+
+.percentage {   position: fixed;
+  top: 200px;
+  right: 340px;
+  color: white;
+  z-index: 1000;
+  font-family: 'helvetica';
+  font-weight: 600;
+  font-size: 100px; }
+  
+  .critic { color: #74ff92; }
+  .user { color: #00eaf2 }
