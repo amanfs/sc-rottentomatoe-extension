@@ -2,7 +2,7 @@ var movieArray = [];
 window.addEventListener("load", function() {
 	var body = $('body');
 	var tip = $('.tippable');
-	body.prepend('<div class="percentage"></div>');
+	body.prepend('<div class="movie-review-container"><div class="percentage"></div><div class="description"></div></div>');
 	var tipFunction = function(e){
 		var that = this;
 		var apiKey = 'shsxnfe3v2ggydvua7u2mtt8';
@@ -21,6 +21,8 @@ window.addEventListener("load", function() {
 					var object = { name: that.innerText, data: resp };
 					var critic = resp.movies[0].ratings.critics_score;
 					var audience = resp.movies[0].ratings.audience_score;
+					var movie_description = resp.movies[0].synopsis;
+					
 					if(critic == -1){
 						$('.percentage').addClass('user').removeClass('critic');
 						$('.percentage').text(audience + '%');
@@ -28,15 +30,19 @@ window.addEventListener("load", function() {
 						$('.percentage').addClass('critic').removeClass('user');
 						$('.percentage').text(critic + '%');
 					}
-					
+
+					$('.description').text(movie_description);
 					movieArray.push(object);
 				}
 			}
 			xhr.send();	
 			
 		} else {
+			console.log('this is the object %o', exists[0]);
 			var critic = exists[0].data.movies[0].ratings.critics_score;
 			var audience = exists[0].data.movies[0].ratings.audience_score;
+			var movie_description = exists[0].data.movies[0].synopsis;
+			
 			if(critic == -1){
 				$('.percentage').addClass('user').removeClass('critic');
 				$('.percentage').text(audience + '%');
@@ -44,6 +50,7 @@ window.addEventListener("load", function() {
 				$('.percentage').addClass('critic').removeClass('user');
 				$('.percentage').text(critic + '%');
 			}
+			$('.description').text(movie_description);
 		}
 		
 	};

@@ -2,14 +2,10 @@
  * Place your custom CSS styles here.
  **/
 
-.percentage {   position: fixed;
-  top: 200px;
-  right: 340px;
-  color: white;
-  z-index: 1000;
-  font-family: 'helvetica';
-  font-weight: 600;
-  font-size: 100px; }
-  
-  .critic { color: #74ff92; }
-  .user { color: #00eaf2 }
+
+.movie-review-container { position: fixed; top: 200px; right: 340px; z-index: 1000;   width: 330px; background-color: rgba(0,0,0,.5); padding: 5px; }
+.percentage { color: #ffffff; font-family: 'helvetica'; font-weight: 600; font-size: 100px; }
+.title { margin: 0 0 15px 10px; color: #ffffff; font-family: 'helvetica'; font-weight: 300; font-size: 18px; -webkit-font-smoothing; antialiased; }
+.description { color: #ffffff; font-family: 'helvetica'; font-weight: 300; font-size: 14px; line-height: 20px; width: 80%; margin-left: 18px; -webkit-font-smoothing: antialiased; }
+.critic { color: #74ff92; }
+.user { color: #00eaf2 }
