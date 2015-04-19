@@ -2,7 +2,12 @@ var movieArray = [];
 window.addEventListener("load", function() {
 	var body = $('body');
 	var tip = $('.tippable');
-	body.prepend('<div class="movie-review-container"><div class="percentage"></div><div class="description"></div></div>');
+	var hostname = window.location.host;
+	if(hostname == 'superchillin.com' || hostname == 'superchillin.net'){
+		body.prepend('<div class="movie-review-container"><div class="percentage"></div><div class="description"></div></div>');	
+	}
+
+	
 	var tipFunction = function(e){
 		var that = this;
 		var apiKey = 'shsxnfe3v2ggydvua7u2mtt8';
